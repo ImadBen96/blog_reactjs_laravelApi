@@ -21,12 +21,15 @@
 
     </head>
     <body>
+    <div id="app">
         @include("layouts.header")
         @yield("content")
-        <div id="app"> </div>
+
+
+
         @include("layouts.footer")
 
-
+    </div>
 
 
         <script src="{{asset('assets/js/jquery.min.js')}}"></script>
