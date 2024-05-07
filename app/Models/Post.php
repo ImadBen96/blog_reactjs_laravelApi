@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $guarded = [""];
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -16,5 +16,14 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return "slug";
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

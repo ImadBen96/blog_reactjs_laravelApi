@@ -4,6 +4,7 @@ import PostDetails from "../components/PostDetails.vue";
 import  AboutUs from  "../components/AboutUs.vue";
 import ContactUs from "../components/ContactUs.vue";
 import Login from "../components/Login.vue";
+import CategoryPosts from "../components/CategoryPosts.vue";
 const routes = [
     {
         path: "/",
@@ -29,6 +30,11 @@ const routes = [
         path: "/login",
         component: () => Login,
         name: "Login"
+    },
+    {
+        path: "/category/:slug/posts",
+        component: () => CategoryPosts,
+        name: "CategoryPosts"
     }
 ];
 

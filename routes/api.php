@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::get("posts",[\App\Http\Controllers\PostController::class,"index"]);
+Route::apiResource("posts",\App\Http\Controllers\PostController::class);
+Route::apiResource("categories",\App\Http\Controllers\CategoryController::class);
+Route::get("category/{slug}/posts",[\App\Http\Controllers\PostController::class,"categoryPosts"]);
+Route::get("search-posts/{query}",[\App\Http\Controllers\PostController::class,"SearchPosts"]);
